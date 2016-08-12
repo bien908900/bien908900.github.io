@@ -287,19 +287,19 @@
 		$("#entryForm").css("display", "block");
 		var out = '<div class="alert alert-danger" style="display:none;" role="alert" id="errorMsg"></div>';
 		out += '<form class="form-horizontal" role="form">';
-		out += '<input type="hidden" class="form-control" id="prefecturesCode" value="' + $("#hidKey2").val() + '">';
-		out += '<input type="hidden" class="form-control" id="lineCode" value="' + $("#hidKey3").val() + '">';
-		out += '<input type="hidden" class="form-control" id="stationCode" value="' + $("#hidKey4").val() + '">';
-		out += '<input type="hidden" class="form-control" id="key" value="' + key + '">';
-		out += '<div class="form-group"><label class="col-sm-2 control-label" style="text-align:center" id="lblvalue">名前</label><div class="col-sm-10"><input class="form-control" id="value"></div></div>';
-		out += '<div class="form-group"><label class="col-sm-2 control-label" style="text-align:center" id="lblstreetAddress">住所</label><div class="col-sm-10"><input class="form-control" id="streetAddress"></div></div>';
-		out += '<div class="form-group"><label class="col-sm-2 control-label" style="text-align:center" id="lblphoneNumber">電話番号</label><div class="col-sm-10"><input class="form-control" id="phoneNumber"></div></div>';
-		out += '<div class="form-group"><label class="col-sm-2 control-label" style="text-align:center" id="lblbusinessHours">営業時間</label><div class="col-sm-10"><input class="form-control" id="businessHours"></div></div>';
-		out += '<div class="form-group"><label class="col-sm-2 control-label" style="text-align:center" id="lblregularHoliday">定休日</label><div class="col-sm-10"><input class="form-control" id="regularHoliday"></div></div>';
-		out += '<div class="form-group"><label class="col-sm-2 control-label" style="text-align:center" id="lblsmoking">喫煙</label><div class="col-sm-10"><input class="form-control" id="smoking"></div></div>';
-		out += '<div class="form-group"><label class="col-sm-2 control-label" style="text-align:center" id="lblparkingLot">駐車場</label><div class="col-sm-10"><input class="form-control" id="parkingLot"></div></div>';
-		out += '<div class="form-group"><label class="col-sm-2 control-label" style="text-align:center" id="lblexternalLink">外部リンク</label><div class="col-sm-10"><textarea class="form-control" rows="3" id="externalLink"></textarea></div></div>';
-		out += '<div class="form-group"><label class="col-sm-2 control-label" style="text-align:center" id="lblremarks">備考</label><div class="col-sm-10"><textarea class="form-control" rows="3" id="remarks"></textarea></div></div>';
+		out += '<input type="hidden" class="form-control entryForm" id="prefecturesCode" value="' + $("#hidKey2").val() + '">';
+		out += '<input type="hidden" class="form-control entryForm" id="lineCode" value="' + $("#hidKey3").val() + '">';
+		out += '<input type="hidden" class="form-control entryForm" id="stationCode" value="' + $("#hidKey4").val() + '">';
+		out += '<input type="hidden" class="form-control entryForm" id="key" value="' + key + '">';
+		out += '<div class="form-group"><label class="col-sm-2 control-label" style="text-align:center" id="lblvalue">名前</label><div class="col-sm-10"><input class="form-control entryForm" id="value"></div></div>';
+		out += '<div class="form-group"><label class="col-sm-2 control-label" style="text-align:center" id="lblstreetAddress">住所</label><div class="col-sm-10"><input class="form-control entryForm" id="streetAddress"></div></div>';
+		out += '<div class="form-group"><label class="col-sm-2 control-label" style="text-align:center" id="lblphoneNumber">電話番号</label><div class="col-sm-10"><input class="form-control entryForm" id="phoneNumber"></div></div>';
+		out += '<div class="form-group"><label class="col-sm-2 control-label" style="text-align:center" id="lblbusinessHours">営業時間</label><div class="col-sm-10"><input class="form-control entryForm" id="businessHours"></div></div>';
+		out += '<div class="form-group"><label class="col-sm-2 control-label" style="text-align:center" id="lblregularHoliday">定休日</label><div class="col-sm-10"><input class="form-control entryForm" id="regularHoliday"></div></div>';
+		out += '<div class="form-group"><label class="col-sm-2 control-label" style="text-align:center" id="lblsmoking">喫煙</label><div class="col-sm-10"><input class="form-control entryForm" id="smoking"></div></div>';
+		out += '<div class="form-group"><label class="col-sm-2 control-label" style="text-align:center" id="lblparkingLot">駐車場</label><div class="col-sm-10"><input class="form-control entryForm" id="parkingLot"></div></div>';
+		out += '<div class="form-group"><label class="col-sm-2 control-label" style="text-align:center" id="lblexternalLink">外部リンク</label><div class="col-sm-10"><textarea class="form-control entryForm" rows="3" id="externalLink"></textarea></div></div>';
+		out += '<div class="form-group"><label class="col-sm-2 control-label" style="text-align:center" id="lblremarks">備考</label><div class="col-sm-10"><textarea class="form-control entryForm" rows="3" id="remarks"></textarea></div></div>';
 		out += '</form>';
 		out += '<button type="button" id="btnAdd" class="btn btn-secondary btn-success btn-block" onclick="checkForm()">確認</span></button>';
 		$("#entryForm").html(out);
@@ -331,7 +331,7 @@
 	 * エラーがあればエラーメッセージ出力、なければjson文字列を生成し確認画面を作成する
 	 */
 	var checkForm = function() {
-		var form = $(".form-control");
+		var form = $(".entryForm");
 		var errMsg = "";
 		var successJson = '{';
 		for (var x = 0; x < form.length; x++) {
